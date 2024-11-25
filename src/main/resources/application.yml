@@ -1,6 +1,0 @@
-spring:
-  profiles:
-    active: local
-openai:
-  api:
-    key: ${OPENAI_API_KEY}
