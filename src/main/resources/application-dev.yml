@@ -1,0 +1,20 @@
+server:
+  port: 25676
+
+spring:
+  application:
+    name: comment-service
+
+  data:
+    mongodb:
+      uri: mongodb+srv://kyeong:GyJ6y2p45eFLOTak@mulmeongcluster.xtkii.mongodb.net/comment?retryWrites=true&w=majority&appName=mulmeongcluster
+      auto-index-creation: true
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://13.209.239.87:8516/eureka/

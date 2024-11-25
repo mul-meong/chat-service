@@ -1,0 +1,19 @@
+server:
+  port: 25676
+
+spring:
+  application:
+    name: comment-service
+
+  data:
+    mongodb:
+      uri: mongodb://captainteemo:meonggodbmul@mongo-primary,mongo-secondary,mongo-backup/comment_read_db?replicaSet=rs0&authSource=admin
+      auto-index-creation: true
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8516/eureka/
